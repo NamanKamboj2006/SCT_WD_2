@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <meta name="description" content="Interactive stopwatch with lap tracking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Left: Stopwatch -->
+        <div class="watch-panel">
+            <div class="watch-header">
+                <span class="app-title">STOPWATCH</span>
+                <span class="status-dot" id="statusDot"></span>
+            </div>
+
+            <div class="time-display" id="display">
+                <span id="timeMinutes">00</span>
+                <span class="sep">:</span>
+                <span id="timeSeconds">00</span>
+                <span class="sep small">.</span>
+                <span id="timeMs" class="ms">00</span>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-reset" id="resetBtn" disabled>Reset</button>
+                <button class="btn btn-start" id="startPauseBtn">Start</button>
+                <button class="btn btn-lap" id="lapBtn" disabled>Lap</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-val" id="statLaps">0</span>
+                    <span class="stat-lbl">Laps</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Laps -->
+        <div class="laps-panel">
+            <div class="laps-panel-header">
+                <span>Lap History</span>
+                <span class="laps-count" id="lapsCount">0 laps</span>
+            </div>
+
+            <div class="laps-col-header">
+                <span>#</span>
+                <span>Lap Time</span>
+            </div>
+
+            <ul class="laps-list" id="lapsList">
+                <li class="laps-empty" id="lapsEmpty">No laps yet</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
